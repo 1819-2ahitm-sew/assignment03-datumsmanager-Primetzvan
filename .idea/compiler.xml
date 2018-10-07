@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyDate" />
+        <module name="assignment03-datumsmanager-Primetzvan" />
         <module name="mydate" />
+        <module name="MyDate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />
