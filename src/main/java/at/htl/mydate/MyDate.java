@@ -16,17 +16,21 @@ public class MyDate {
     private int yearyounger = Integer.MAX_VALUE;
 
 
+
     /**
      * Formatierung des Datums
      *
      * @return String, zB Samstag, 29. September 2018
      */
 
+    // 2018-11-04-HM: Überprüfung, ob das Datum sinnvoll ist, fehlt
     public MyDate(String dateString){
         extracteDate(dateString);
 
     }
 
+
+    // 2018-11-04-HM: Methode überflüssig => Code einfach im Konstruktor einfügen
     private void extracteDate(String dateString) {
         String [] date = dateString.split("\\.");
         this.day = Integer.valueOf(date[0]);
@@ -35,6 +39,9 @@ public class MyDate {
     }
 
     private String weekday() {
+
+        // 2018-11-04-HM: falls month < 3 muss das Jahr um 1 reduziert werden, damit die Formel stimmt
+
         int weekday1 = ((day + (int)(2.6 * ((month + 9) % 12 + 1) - 0.2)
                 + year % 100 + (int)(year % 100 / 4) + (int)(year / 400)
                 - 2 * (int)(year / 100) - 1) % 7 + 7) % 7 + 1;
@@ -85,6 +92,8 @@ public class MyDate {
      * @return true, wenn this-Datum jünger als other-Datum ist
      *         false, wenn this-Datum jünger oder gleich other-Datum ist
      */
+    // 2018-11-04-HM: wie im Blockkommentar beschrieben, sollte das Datum mit einem übergebenen Datum (other) verglichen werden
+    // 2018-11-04-HM: du überprüst hingegen nur, ob gewisse Grenzwerte nicht überschritten werden (also ob das Datum sinnvoll ist)
     public boolean isYoungerThan() {
 
         Boolean younger = false;

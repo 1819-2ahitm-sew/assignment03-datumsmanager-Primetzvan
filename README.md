@@ -1,5 +1,9 @@
 # Übung Datumsverwaltung
 
+## Beurteilung
+
+2/4 Punkte (unnvollständig, Feedback siehe Kommentare im Sourcecode)
+
 ## Lehrziel
 
 - Modellieren einer einzelnen Java Klasse
@@ -28,7 +32,9 @@ Ein Datum soll folgende Funktionalitäten besitzen:
   ~~~java
   int weekday = ((d + (int)(2.6 * ((m + 9) % 12 + 1) - 0.2)
                 + y % 100 + (int)(y % 100 / 4) + (int)(y / 400)
-                - 2 * (int)(y / 100) - 1) % 7 + 7) % 7 + 1;  ~~~  Ist der Monat ein Jänner oder Februar, so muss beim Jahr 1 subtrahiert werden.
+                - 2 * (int)(y / 100) - 1) % 7 + 7) % 7 + 1;
+  ~~~
+  Ist der Monat ein Jänner oder Februar, so muss beim Jahr 1 subtrahiert werden.
 
   Das Ergebnis ist eine ganze Zahl mit folgender Bedeutung:
 

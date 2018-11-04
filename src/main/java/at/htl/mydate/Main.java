@@ -15,23 +15,25 @@ public class Main {
 
         System.out.println("Date-Manager %d============%d");
         System.out.printf("%d. Datum: ", counter);
-        input = scanner.nextLine();
 
 
-        while (!input.equals("quite")){
+        while (!input.equals("quite")){ // 2018-11-04-HM: "quit" ... "quite" bedeutet "ziemlich"
 
             MyDate myDate = new MyDate(input);
 
-            System.out.println("Date-Manager %d============%d");
-            System.out.printf("%d ", counter++);
-            input = scanner.nextLine();
 
-            if (myDate.isYoungerThan()){
+            System.out.println("Date-Manager %d============%d"); // 2018-11-04-HM: sollte nur 1x beim Programmstart ausgegeben werden
+            System.out.printf("%d ", counter++);
+            input = scanner.nextLine(); // 2018-11-04-HM: Einlesen des Datums sollte erst nach der if-else-Anweisung erfolgen
+
+            if (myDate.isYoungerThan()){ // 2018-11-04-HM: Hier sollte ein Vergleich mit aktdate stattfinden
                 System.out.println("Jüngstes Datum: " + myDate.formatDate());
                 aktdate = myDate.formatDate();
             }else {
                 System.out.println("Jüngstes Datum: " + aktdate);
             }
+
+
 
         }
 
